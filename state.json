@@ -1,0 +1,99 @@
+{
+  "question": "Simulate a damped harmonic oscillator",
+  "project_plan": {
+    "mode": "single_file_experiment",
+    "question": "Simulate a damped harmonic oscillator",
+    "files": [
+      {
+        "name": "main.py",
+        "role": "entrypoint",
+        "description": "Single-file solution for the entire project. Implement any necessary helper functions and numerical routines directly in this file. Running this script must:\n- Execute all experiments described in project_plan['experiments'].\n- Generate all requested plots using matplotlib, saving them with the exact filenames specified in the experiment plan.\n- Compute and (optionally) print any requested metrics.\n- Finally, print the primary numeric answer on a line of the form:\n    print('Answer:', value)\nNo additional modules or files are required; keep everything in this one script."
+      },
+      {
+        "name": "environment.yaml",
+        "role": "env",
+        "description": "Conda environment specification required to run main.py. Use a valid YAML conda env format with a name, channels, and dependencies. Include a pinned Python version and only the libraries that are actually imported in main.py (e.g., numpy, matplotlib, etc.)."
+      }
+    ],
+    "experiments": [
+      {
+        "id": "exp1",
+        "name": "Time response for different damping regimes",
+        "goal": "Compare displacement vs time for underdamped, critically damped, and overdamped cases.",
+        "description": "Simulate the second\u2011order ODE m\u00b7x'' + c\u00b7x' + k\u00b7x = 0 for three damping ratios (\u03b6 < 1, \u03b6 = 1, \u03b6 > 1) using the same initial displacement and zero initial velocity. Plot the displacement over time on a single figure to illustrate the characteristic behaviors.",
+        "outputs": {
+          "plots": [
+            {
+              "filename": "displacement_vs_time.png",
+              "description": "Displacement versus time for underdamped, critically damped, and overdamped oscillators."
+            }
+          ],
+          "metrics": []
+        }
+      },
+      {
+        "id": "exp2",
+        "name": "Phase\u2011space trajectories vs damping",
+        "goal": "Visualize how damping affects the trajectory in the (position, velocity) plane.",
+        "description": "For the same three damping ratios as in exp1, integrate the system and record position and velocity. Plot each trajectory in phase space on a single plot, using arrows or a colormap to indicate time progression.",
+        "outputs": {
+          "plots": [
+            {
+              "filename": "phase_space.png",
+              "description": "Phase\u2011space (position vs velocity) curves for the three damping regimes."
+            }
+          ],
+          "metrics": []
+        }
+      }
+    ]
+  },
+  "run_result": {
+    "success": true,
+    "stdout": "Answer: 1.0\n",
+    "stderr": "",
+    "error": null,
+    "experiment_dir": "/home/rachelgordon/CodingAgent/experiments/20251130_123310_simulate_a_damped_harmonic_oscillator"
+  },
+  "parsed_answer": {
+    "raw_line": "Answer: 1.0",
+    "value": 1.0,
+    "parse_success": true,
+    "error": null
+  },
+  "critic_report": {
+    "summary": "Explanation appears consistent with the parsed numeric answer from stdout.",
+    "issues": [],
+    "parsed_answer": {
+      "raw_line": "Answer: 1.0",
+      "value": 1.0,
+      "parse_success": true,
+      "error": null
+    },
+    "explanation_numeric": {
+      "value": 1.0,
+      "token": "1.0",
+      "parse_success": true,
+      "error": null
+    },
+    "consistency_ok": true
+  },
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "success": true,
+      "error": null,
+      "validation_issues": {}
+    }
+  ],
+  "repo": {
+    "created": true,
+    "repo": {
+      "name": "auto-paper-Simulate-a-damped-harmonic-oscillator-20251130-183730",
+      "full_name": "rachelngordon/auto-paper-Simulate-a-damped-harmonic-oscillator-20251130-183730",
+      "html_url": "https://github.com/rachelngordon/auto-paper-Simulate-a-damped-harmonic-oscillator-20251130-183730",
+      "clone_url": "https://github.com/rachelngordon/auto-paper-Simulate-a-damped-harmonic-oscillator-20251130-183730.git",
+      "default_branch": "main"
+    }
+  }
+}
